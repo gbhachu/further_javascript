@@ -1,4 +1,4 @@
-(function(exports) {
+(function(noteList) {
   var notelist = [];
   function addNoteList(model){
     return notelist.push(model);
@@ -8,16 +8,14 @@
     return notelist.length;
   }
   function returnArray(){
-    console.log(notelist[0])
-    return notelist[0];
+    return notelist;
   }
 
   function getNoteList(){
-    console.log(notelist.join())
-    return notelist.join();
+   return notelist.join('</div></li><li><div>');
   }
-  exports.addNoteList = addNoteList;
-  exports.checkArray = checkArray;
-  exports.returnArray = returnArray;
-  exports.getNoteList = getNoteList;
+  noteList.addNoteList = addNoteList;
+  noteList.checkArray = checkArray;
+  noteList.returnArray = returnArray;
+  noteList.getNoteList = getNoteList;
 })(this);
