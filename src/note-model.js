@@ -1,15 +1,9 @@
 console.log('hello');
 
-// function Note(string){
-// 	this._text = string;
-// }
 
-// Note.prototype.returnText = function(){
-// 	return this._text
-// }
 
 (function(exports) {
-	// var text = "";
+ var text = "text";
 	function addText(string){
 	return text = string;
 	}
