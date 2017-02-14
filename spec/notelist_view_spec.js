@@ -1,12 +1,11 @@
 function testNotelistView(){
   var first = addText("Favourite food: pesto");
   var second = addText("Favourite drink: seltzer");
-  var third = addText("Favourite dessert: tiramisu");
   addNoteList(first);
   addNoteList(second);
-  addNoteList(third);
 
-  if (returnHTMLString().includes("Favourite food: pesto</div></li><li><div>Favourite drink: seltzer") == false) {
+
+  if (returnHTMLString().includes("<ul><li><div>cat</div></li><li><div>dog</div></li><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>") == false) {
     throw new Error("list view is incomplete");
   }
 };

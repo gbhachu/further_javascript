@@ -4,7 +4,6 @@
     return notelist.push(model);
   }
   function checkArray(){
-    console.log (notelist.length)
     return notelist.length;
   }
   function returnArray(){

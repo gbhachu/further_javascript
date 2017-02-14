@@ -1,22 +1,11 @@
-console.log('hello');
-
-// function Note(string){
-// 	this._text = string;
-// }
-
-// Note.prototype.returnText = function(){
-// 	return this._text
-// }
-
-(function(exports) {
+(function(Note) {
 	var text = "";
 	function addText(string){
 	return text = string;
 	}
 	function returnText(){
-	console.log(text)
-  return text;
+  	return text;
 	}
-	exports.returnText = returnText;
-	exports.addText = addText;
+	Note.returnText = returnText;
+	Note.addText = addText;
 })(this);
