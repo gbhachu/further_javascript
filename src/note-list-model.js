@@ -4,7 +4,6 @@
     return notelist.push(note);
   }
   function checkArray(){
-    console.log (notelist.length)
     return notelist.length;
   }
   function returnArray(){
@@ -15,7 +14,7 @@
     var short=[]
     for(i=0; i<notelist.length; i++){short.push(notelist[i].substring(0,19))}
    //return notelist.join('</div></li><li><div>')
-    return short.join('</div></li><li><div>')
+    return short.join('</a></div></li><li><div><a href="">')
   }
 
 

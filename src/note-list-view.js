@@ -1,7 +1,7 @@
 (function(exports){
 	function returnHTMLString(){
 
-		return '<ul><li><div>' + getNoteList() + '<div></li></ul>'
+		return '<ul><li><div><a href="">' + getNoteList() + '</a></div></li></ul>'
 
 	};
 
