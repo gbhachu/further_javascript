@@ -1,0 +1,1 @@
+	document.getElementById('app').innerHTML = display('cats are the bloody best, even better than unicorn because they are real');

@@ -1,17 +1,11 @@
 function testNewNoteList(){
   var first = 'cat'
-  var second = 'dog'
+  var second = 'doggie is the best animal in the word!'
   addNoteList(first);
   addNoteList(second);
-  if (checkArray() != 2) {
-    throw new Error("notelist is not expected length");
-    }
- if (returnArray()[0] != "cat") {
-    throw new Error("notelist content is incorrect");
-    }
-  if (getNoteList() == '') {
-    throw new Error("notelist is empty");
-  }
+    if (getNoteList().includes("doggie is the best animal") == true) {
+    throw new Error("note is not return as shortened");
+  };
 };
 
 testNewNoteList()

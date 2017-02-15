@@ -6,4 +6,4 @@
 	NoteController.display = display
 })(this)
 
-document.getElementById('app').innerHTML = display('cats');
+
