@@ -1,8 +1,12 @@
 function testNewNoteList(){
   var first = 'cat'
   var second = 'dog'
+
   addNoteList(first);
   addNoteList(second);
+
+
+
   if (checkArray() != 2) {
     throw new Error("notelist is not expected length");
     }
@@ -12,6 +16,7 @@ function testNewNoteList(){
   if (getNoteList() == '') {
     throw new Error("notelist is empty");
   }
-};
 
+
+};
 testNewNoteList()

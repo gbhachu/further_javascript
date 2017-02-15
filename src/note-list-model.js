@@ -12,9 +12,13 @@
   }
 
   function getNoteList(){
-   return notelist.join('</div></li><li><div>');
-
+    var short=[]
+    for(i=0; i<notelist.length; i++){short.push(notelist[i].substring(0,19))}
+   //return notelist.join('</div></li><li><div>')
+    return short.join('</div></li><li><div>')
   }
+
+
   exports.addNoteList = addNoteList;
   exports.checkArray = checkArray;
   exports.returnArray = returnArray;
