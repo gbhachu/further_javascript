@@ -1,4 +1,4 @@
-(function(noteList) {
+(function(exports) {
   var notelist = [];
   function addNoteList(note){
     return notelist.push(note);
@@ -15,8 +15,8 @@
    return notelist.join('</div></li><li><div>');
 
   }
-  noteList.addNoteList = addNoteList;
-  noteList.checkArray = checkArray;
-  noteList.returnArray = returnArray;
-  noteList.getNoteList = getNoteList;
+  exports.addNoteList = addNoteList;
+  exports.checkArray = checkArray;
+  exports.returnArray = returnArray;
+  exports.getNoteList = getNoteList;
 })(this);
