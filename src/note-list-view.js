@@ -1,6 +1,10 @@
-(function(noteListView){
+(function(exports){
 	function returnHTMLString(){
-		return '<ul><li><div>' + getNoteList() + '</div></li></ul>'
+
+		return '<ul><li><div>' + getHTMLList() + '</div></li></ul>'
+
 	};
-	noteListView.returnHTMLString = returnHTMLString;
+
+	exports.returnHTMLString = returnHTMLString;
 })(this);
+
