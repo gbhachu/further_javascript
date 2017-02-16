@@ -1,28 +1,14 @@
-console.log('hello');
-
 (function(exports) {
- var text = "text";
- var id = 0;
 
-	function addText(string){
-	return text = string ;
+	function Note(noteText, id) {
+		this._content = noteText;
+		this._id = id;
 	}
 
-	function returnText(){
-  	return text;
+	Note.prototype.getContent = function() {
+		return this._content;
 	}
 
-  	function assignId(){
-  	id += 1;
-  	return id;
-  	}
+	exports.Note = Note;
 
-  	function returnId(){
-  	return assignId();
-  	}
-
-
-exports.returnText = returnText;
-exports.addText = addText;
-exports.returnId = returnId;
 })(this);

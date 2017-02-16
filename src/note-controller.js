@@ -1,21 +1,43 @@
-'use strict';
+(function(exports) {
 
-(function(exports){
-	function display(string, returnHTMLString_func, addText_func, addNoteList_func){
-	addNoteList(addText(string));
-	return returnHTMLString();
-	};
-	exports.display = display
+function NoteController(notelist){
+  this.list = notelist;
+  var notecontroller = this;
+  notelistview = new NoteListView(this.list);
+}
+
+NoteController.prototype.displayNotes = function(){
+  var elem = document.getElementById("app");
+  elem.innerHTML = notelistview.display();
+}
+
+NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
+  window.addEventListener("hashchange", showNoteForCurrentPage(notecontroller));
+}
+
+function showNoteForCurrentPage(notecontroller) {
+  console.log(window.location);
+  console.log(notecontroller.list._notes[0]);
+  showNote(getIdFromURL(window.location));
+}
+
+function getIdFromURL(location) {
+  return location.hash.split("#")[1];
+};
+
+function showNote(id) {
+  var thisnote = findNote(id, notecontroller);
+  console.log(notecontroller)
+  view = document.getElementById("view");
+  view.innerHTML = new SingleNoteView(thisnote).generateHTML();
+}
+
+function findNote(id, notecontroller){
+    for (var i=0; i<notecontroller.list._notes.length; i++) {
+      if (notecontroller.list._notes[i]._id === id) return notecontroller.list._notes[i]
+    }
+}
+
+exports.NoteController = NoteController;
+
 })(this)
-
-
-// document.getElementById("app").innerHTML = display("I like Bananas, they are awesome!!!!!");
-// document.getElementById("app").innerHTML = display("I like Football, it is awesome!!!!!");
-// document.getElementById("app").innerHTML = display("I like Steak, it is awesome!!!!!");
-// document.getElementById("app").innerHTML = display("I like Javascript, it is awesome!!!!!!");
-
-// <div><li> start  (covered)
-// <a href="a">a</a> need to repeat
-// </div></li><div><li> separator
-// <a href="b">b</a> need to repeat
-// </div></li> end (covered)
