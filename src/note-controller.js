@@ -4,7 +4,6 @@ function NoteController(notelist){
   this.list = notelist;
   var notecontroller = this;
   notelistview = new NoteListView(this.list);
-  console.log(notecontroller)
 }
 
 NoteController.prototype.displayNotes = function(){
@@ -17,10 +16,7 @@ NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
 }
 
 function showNoteForCurrentPage() {
-  console.log(window.location);
-  console.log(notecontroller.list._notes[0]);
-  console.log(notecontroller.list._notes[1]);
-  console.log(notecontroller.list._notes[2]);
+
   showNote(getIdFromURL(window.location));
 }
 
@@ -30,18 +26,23 @@ function getIdFromURL(location) {
 
 function showNote(id) {
   var thisnote = findNote(id);
-  console.log(thisnote)
-  console.log(id)
   view = document.getElementById("view");
   view.innerHTML = new SingleNoteView(thisnote).generateHTML();
 }
 
 function findNote(id){
-  console.log(notecontroller.list._notes._id);
     for (var i=0; i<notecontroller.list._notes.length; i++) {
       if (notecontroller.list._notes[i]._id == id) return notecontroller.list._notes[i]
     }
 }
+
+function listenForFormSubmit() {
+  document.getElementById("text").addEventListener("submit", function(submitEvent) {
+ 			submitEvent.preventDefault();
+ 		});
+
+}
+
 
 exports.NoteController = NoteController;
 
