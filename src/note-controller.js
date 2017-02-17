@@ -2,7 +2,7 @@
 
 function NoteController(notelist){
   this.list = notelist;
-  notecontroller = this;
+  var notecontroller = this;
   notelistview = new NoteListView(this.list);
   console.log(notecontroller)
 }
