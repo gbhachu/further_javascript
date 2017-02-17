@@ -38,11 +38,13 @@ function findNote(id){
 
 function listenForFormSubmit() {
   document.getElementById("text").addEventListener("submit", function(submitEvent) {
+
  			submitEvent.preventDefault();
+      console.log(submitEvent.path[0][0].value);
  		});
 
 }
-
+listenForFormSubmit();
 
 exports.NoteController = NoteController;
 
